@@ -1,8 +1,8 @@
-import React from "react";
-import { useState } from 'react';
-import AdminPanel from "./AdminPanel";
+import React, { useState } from 'react';
+import AdminPanel from './AdminPanel';
+import './LogAdmin.css'; 
 
-function LogAdmin(){
+function LogAdmin() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [accountType, setAccountType] = useState('');
@@ -10,46 +10,52 @@ function LogAdmin(){
 
     const handleLogin = () => {
         const isAdmin = accountType === 'admin';
-        setUser({name: username, isAdmin});
-    }
+        setUser({ name: username, isAdmin });
+    };
+
     return (
-        <div>
-            {user?(
-                <AdminPanel user={user}/>
-            ):(<div>
-                <h1>Login</h1>
-                <div>
-                    <label>Username:</label>
-                    <input
-                    text="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    />
-                </div>
+        <div className="login-container">
+            {user ? (
+                <AdminPanel user={user} />
+            ) : (
+                <div className="login-form">
+                    <h1 className='center'>ReactJs</h1>
+                    <h1 className="login-title">Log in</h1>
+                    <div className="input-group">
+                        <label className="input-label">Username:</label>
+                        <input
+                            type="text"
+                            className="input-field"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </div>
 
-                <div>
-                    <label>Password:</label>
-                    <input
-                    text="text"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
+                    <div className="input-group">
+                        <label className="input-label">Password:</label>
+                        <input
+                            type="password"
+                            className="input-field"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
 
-                <div>
-                    <label>Account Type:</label>
-                    <select
-                    text="text"
-                    value={accountType}
-                    onChange={(e) => setAccountType(e.target.value)}
-                    >
-                        <option value="user">User</option>
-                        <option value="admin">Admin</option>
-                    </select>
-                </div>
-                <button onClick={handleLogin}>Login</button>
+                    <div className="input-group">
+                        <label className="input-label">Account Type:</label>
+                        <select
+                            className="input-field"
+                            value={accountType}
+                            onChange={(e) => setAccountType(e.target.value)}
+                        >
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
 
-                </div>)}
+                    <button className="login-button" onClick={handleLogin}>Log In</button>
+                </div>
+            )}
         </div>
     );
 }

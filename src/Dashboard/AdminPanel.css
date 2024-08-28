@@ -1,0 +1,66 @@
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5; 
+}
+
+.admin-dashboard, .user-dashboard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.dashboard-welcome {
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard-button {
+    padding: 12px;
+    background-color: #1877f2; /* Facebook blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dashboard-button:hover {
+    background-color: #165eab; /* Darker blue on hover */
+}
+
+
+.admin-dashboard .dashboard-button {
+    background-color: #28a745; /* Green for admin actions */
+}
+
+.admin-dashboard .dashboard-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.user-dashboard .dashboard-button {
+    background-color: #007bff; /* Blue for user actions */
+}
+
+.user-dashboard .dashboard-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
