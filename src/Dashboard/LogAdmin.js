@@ -30,8 +30,8 @@ function LogAdmin() {
             setLoginAttempts(prevAttempts => prevAttempts + 1);
             setErrorMessage('Invalid Credentials');
 
-            if (loginAttempts +1 >= 3){
-                navigate('');
+            if (loginAttempts + 1 >= 3){
+                navigate('/auth-error');
             }
         }
         
@@ -78,6 +78,10 @@ function LogAdmin() {
                     </div>
 
                     <button className="login-button" onClick={handleLogin}>Log In</button>
+                    {errorMessage && <p style={{color:'red', textAlign:'center'}}>{errorMessage}</p>}
+                    {loginAttempts > 0 && (
+                        <p style={{color:'red', textAlign:'center'}}>Login Attempts: {loginAttempts}/3</p>
+                    )}
                 </div>
             )}
         </div>
